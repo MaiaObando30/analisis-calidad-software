@@ -45,14 +45,16 @@ public class UserManager {
 }
 Problemas de calidad identificados
 Durante el análisis del código, se identificaron varios problemas de calidad que afectan tanto la legibilidad como la escalabilidad y robustez del código. A continuación, se detallan los problemas, su impacto y las soluciones propuestas:
+### 🔍 Problemas de calidad identificados
 
-Problemas de calidad identificados
-Problema	Descripción	Impacto	Solución Propuesta
-1. Nombres de métodos poco claros	a() y p() no dicen nada sobre su funcionalidad	Dificulta la comprensión del código	Usar nombres descriptivos como addUser() y printUsers()
-2. Variables estáticas	users y userCount son static, creando estado global	Imposibilita reutilizar la clase con otras listas	Usar atributos de instancia
-3. Tamaño fijo	String[] tiene límite de 10 usuarios	No es escalable	Usar ArrayList<String>
-4. Mensajes de error vagos	Solo dice "Error"	No ayuda a saber qué falló	Usar mensajes claros o excepciones
-5. Mezcla de lógica y presentación	System.out.println() está en la lógica	Viola principios de diseño como SRP	Separar presentación de lógica o encapsular bien.
+| Nº  | Problema                            | Descripción                                                                 | Impacto                                                              | Solución Propuesta                                                      |
+|:--:|-------------------------------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------|
+| 1  | **Nombres de métodos poco claros**  | Los métodos `a()` y `p()` no indican su funcionalidad.                      | Dificulta la comprensión del código.                                 | Usar nombres descriptivos como `addUser()` y `printUsers()`.            |
+| 2  | **Variables estáticas**             | `users` y `userCount` son estáticos, generando estado global.              | Impide reutilizar la clase con otros conjuntos de usuarios.          | Utilizar atributos de instancia.                                        |
+| 3  | **Tamaño fijo en el arreglo**       | El arreglo `String[] users` tiene un tamaño limitado a 10 elementos.       | Limita la escalabilidad del sistema.                                 | Usar `ArrayList<String>` para permitir crecimiento dinámico.            |
+| 4  | **Mensajes de error vagos**         | Se utiliza "Error" sin detalles específicos.                               | No permite identificar claramente los fallos.                        | Mostrar mensajes claros o usar excepciones.                             |
+| 5  | **Lógica mezclada con presentación**| Se usan `System.out.println()` directamente en la lógica del programa.     | Viola el principio de responsabilidad única (SRP).                   | Separar la lógica de negocio de la presentación o encapsularla mejor.   |
+
 
 Código mejorado
 A continuación, se presenta el código optimizado que implementa las soluciones propuestas para mejorar la calidad del software:
