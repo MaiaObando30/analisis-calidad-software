@@ -44,10 +44,11 @@ public class UserManager {
     }
 }
 ---
+## Problemas de calidad identificados
 
-Problemas de calidad identificados
 Durante el análisis del código, se identificaron varios problemas de calidad que afectan tanto la legibilidad como la escalabilidad y robustez del código. A continuación, se detallan los problemas, su impacto y las soluciones propuestas:
-### 🔍 Problemas de calidad identificados
+
+###  Problemas de calidad identificados:
 
 | Nº  | Problema                            | Descripción                                                                 | Impacto                                                              | Solución Propuesta                                                      |
 |:--:|-------------------------------------|-----------------------------------------------------------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------|
@@ -58,8 +59,7 @@ Durante el análisis del código, se identificaron varios problemas de calidad q
 | 5  | **Lógica mezclada con presentación**| Se usan `System.out.println()` directamente en la lógica del programa.     | Viola el principio de responsabilidad única (SRP).                   | Separar la lógica de negocio de la presentación o encapsularla mejor.   |
 
 ---
-
-Código mejorado
+## Código mejorado
 A continuación, se presenta el código optimizado que implementa las soluciones propuestas para mejorar la calidad del software:
 
 import java.util.ArrayList;
@@ -100,8 +100,7 @@ public class UserManager {
 }
 
 ---
-
-Cambios realizados:
+## Cambios realizados:
 
 Métodos con nombres descriptivos: Se cambió el nombre de los métodos a() y p() por addUser() y printUsers(), respectivamente, para hacerlos más claros.
 
@@ -112,7 +111,7 @@ Mejora en los mensajes de error: Los mensajes de error ahora son más informativ
 Separación de la lógica de presentación: La lógica de agregar y mostrar usuarios se mantiene separada de la presentación (en este caso, los System.out.println() siguen siendo necesarios para la interacción, pero la lógica está mejor organizada).
 
 ---
-Conclusión
+## Conclusión
 Con las mejoras implementadas, el código:
 
 Es más legible gracias a los nombres descriptivos de métodos y la estructura organizada.
