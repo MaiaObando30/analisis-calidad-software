@@ -104,28 +104,6 @@ Mejora en los mensajes de error: Los mensajes de error ahora son más informativ
 
 Separación de la lógica de presentación: La lógica de agregar y mostrar usuarios se mantiene separada de la presentación (en este caso, los System.out.println() siguen siendo necesarios para la interacción, pero la lógica está mejor organizada).
 
-🧪 Ejemplo de uso
-A continuación, se presenta un ejemplo de cómo utilizar la clase UserManager en un programa simple:
-
-public class Main {
-    public static void main(String[] args) {
-        UserManager manager = new UserManager();
-        
-        manager.addUser("Ana");
-        manager.addUser("Luis");
-        manager.addUser(""); // Intento inválido
-
-        manager.printUsers();
-    }
-}
-
-Salida esperada:
-✅ Usuario agregado: Ana
-✅ Usuario agregado: Luis
-❌ Error: El nombre de usuario no puede estar vacío.
-📋 Lista de usuarios:
-- Ana
-- Luis
 Conclusión
 Con las mejoras implementadas, el código:
 
