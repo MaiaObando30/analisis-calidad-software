@@ -43,15 +43,16 @@ public class UserManager {
             System.out.println(users[i]);
     }
 }
-🔍 Problemas de calidad identificados
+Problemas de calidad identificados
 Durante el análisis del código, se identificaron varios problemas de calidad que afectan tanto la legibilidad como la escalabilidad y robustez del código. A continuación, se detallan los problemas, su impacto y las soluciones propuestas:
-| **Problema**                                 | **Descripción**                                                                   | **Impacto**                                                                          | **Solución Propuesta**                                                                       |
-| -------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- |
-| **1. Nombres de métodos poco claros**        | Los métodos `a()` y `p()` no indican su funcionalidad de manera clara.            | Dificulta la comprensión del código.                                                 | Usar nombres descriptivos como `addUser()` y `printUsers()`.                                 |
-| **2. Variables estáticas**                   | Las variables `users` y `userCount` son estáticas, lo que crea un estado global.  | Esto imposibilita reutilizar la clase con otros conjuntos de usuarios.               | Usar atributos de instancia en lugar de variables estáticas.                                 |
-| **3. Tamaño fijo en el arreglo de usuarios** | El arreglo `String[] users` tiene un tamaño fijo de 10 usuarios.                  | El código no es escalable ni flexible.                                               | Usar `ArrayList<String>` para permitir un tamaño dinámico.                                   |
-| **4. Mensajes de error vagos**               | Los mensajes de error son muy genéricos, como "Error".                            | No ayuda a entender qué falló o cuál es la causa del problema.                       | Proveer mensajes de error más claros o, en su caso, lanzar excepciones.                      |
-| **5. Mezcla de lógica y presentación**       | La lógica de agregar y mostrar usuarios está mezclada con `System.out.println()`. | Esto viola el principio de responsabilidad única (SRP) y dificulta el mantenimiento. | Separar la lógica de negocio de la presentación o encapsular adecuadamente la funcionalidad. |
+
+Problemas de calidad identificados
+Problema	Descripción	Impacto	Solución Propuesta
+1. Nombres de métodos poco claros	a() y p() no dicen nada sobre su funcionalidad	Dificulta la comprensión del código	Usar nombres descriptivos como addUser() y printUsers()
+2. Variables estáticas	users y userCount son static, creando estado global	Imposibilita reutilizar la clase con otras listas	Usar atributos de instancia
+3. Tamaño fijo	String[] tiene límite de 10 usuarios	No es escalable	Usar ArrayList<String>
+4. Mensajes de error vagos	Solo dice "Error"	No ayuda a saber qué falló	Usar mensajes claros o excepciones
+5. Mezcla de lógica y presentación	System.out.println() está en la lógica	Viola principios de diseño como SRP	Separar presentación de lógica o encapsular bien.
 
 Código mejorado
 A continuación, se presenta el código optimizado que implementa las soluciones propuestas para mejorar la calidad del software:
